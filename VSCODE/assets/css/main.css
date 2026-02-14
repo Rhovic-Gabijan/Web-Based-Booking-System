@@ -1,0 +1,58 @@
+/* =========================================
+   MAIN.CSS - Variables & Base Styles
+   ========================================= */
+
+:root {
+    --gold: #D4AF37;
+    --dark: #1A1A1A;
+    --light: #F4F4F4;
+    --text: #333;
+    --overlay: rgba(0,0,0,0.5);
+    --heading: 'Cinzel', serif;
+    --body: 'Lato', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font: 300 1rem/1.6 var(--body);
+    color: var(--text);
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover { background: #b5952f; }
+
+.btn-large {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}

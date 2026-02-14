@@ -1,0 +1,164 @@
+/* =========================================
+   HOME.CSS - Homepage Styles Only
+   ========================================= */
+
+/* Home Hero */
+.home-hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -74px;
+}
+
+.video-container {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.2);
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.home-hero .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--overlay);
+}
+
+.home-hero .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.home-hero h1 {
+    font: 4rem var(--heading);
+    color: var(--gold);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 0.5rem;
+}
+
+.home-hero p {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* About Section */
+.about-section {
+    padding: 5rem 0;
+    background: #f9f9f9;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font: 2.5rem var(--heading);
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+}
+
+.features-list {
+    margin-top: 2rem;
+    list-style: none;
+}
+
+.features-list li {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.features-list li::before {
+    content: "✦ ";
+    color: var(--gold);
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 10px 10px 0 var(--gold);
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 5rem 0;
+    background: var(--dark);
+    color: #fff;
+    overflow: hidden;
+}
+
+.gallery-section h2 {
+    font: 2.5rem var(--heading);
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: #888;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.scroll-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.scroll-wrapper::-webkit-scrollbar { display: none; }
+
+.promo-card {
+    flex: 0 0 300px;
+    height: 450px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    transition: transform 0.3s;
+}
+
+.promo-card:hover { transform: scale(1.02); }
+
+.promo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promo-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    padding: 2rem 1rem 1rem;
+    color: #fff;
+}
+
+.promo-info h3 {
+    font-family: var(--heading);
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+}

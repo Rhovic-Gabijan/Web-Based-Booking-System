@@ -1,0 +1,53 @@
+/* =========================================
+   NAV.CSS - Navigation Styles
+   ========================================= */
+
+.navbar {
+    background: var(--dark);
+    color: var(--gold);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.logo-block {
+    font: 700 1.5rem/1 var(--heading);
+    letter-spacing: 1px;
+}
+
+.logo-script {
+    font: 700 2rem/1 'Brush Script MT', cursive;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--light);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.btn-nav {
+    border: 1px solid var(--gold);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}

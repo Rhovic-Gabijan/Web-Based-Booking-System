@@ -1,0 +1,30 @@
+/* =========================================
+   RESPONSIVE.CSS - Mobile & Tablet Styles
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Typography */
+    .home-hero h1 { font-size: 2.5rem; }
+    #booking-hero h1 { font-size: 2.5rem; }
+    
+    /* Layout */
+    .about-grid { grid-template-columns: 1fr; }
+    .filters-grid { grid-template-columns: 1fr; }
+    
+    /* Gallery */
+    .promo-card {
+        flex: 0 0 250px;
+        height: 350px;
+    }
+    
+    /* Navigation */
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Form */
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
