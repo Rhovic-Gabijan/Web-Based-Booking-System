@@ -1,0 +1,457 @@
+body{
+    margin: 0;
+    padding: 0%;
+    background-color: #231f20;
+}
+
+/*Navigation Bar*/
+nav{
+    background-color: #231f20;
+    box-shadow: 0px 1px 5px black;
+    padding: 5px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo-container{
+    padding: 0;
+}
+
+.logo{
+    width:fit-content;
+    height: auto;
+}
+
+/*SERVICES*/
+.Services{
+    float: right;
+    position: relative;
+    top: -55px;
+    padding-right: 60px;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+    font-family: Arial;
+    margin: 0 20px;
+    font-size: 90%;
+    transition: 1s;
+}
+
+.link:hover{
+    color: #d2ad36;
+}
+
+.btn-link{
+    margin-right: 15px;
+    padding: 10px 15px;
+    font-family: Verdana;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #d2ad36;;
+    transition: 1s;
+}
+
+.btn-link:hover{
+    color: black;
+    background-color: #d2ad36;
+}
+
+/*TEASER*/
+.content-container{
+    margin-top: 0px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    text-align: center;
+    background-color: #eef5fd;
+}
+
+.teaser{
+    display: block;
+    margin-top: 5%;
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+/*ABOUT*/
+#about-container{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    gap: 10px;
+    background-color: #f9f9f9;
+}
+
+.aboutus{
+    width: 50%;
+}
+
+.aboutustext{
+    font-size: 20px;
+    font-family: Calibri;
+    color: #575757;
+}
+
+.aboutustext b{
+    color: black;
+}
+
+.resortview{
+    width: 50%;
+}
+
+.resortview img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border-right: 5px solid #d2ad36;
+    border-bottom: 5px solid #d2ad36;
+    box-shadow: 
+    10px 12px 10px grey;
+}
+
+/*GALLERY*/
+#gallery-container{
+    margin-top: 0;
+    align-items: center;
+    justify-content: space-between;
+    color: #d2ad36;
+    padding: 60px;
+    gap: 10px;
+    background-color: #231f20;
+}
+
+.gallery h2{
+    text-align: center;
+    margin-bottom: 3px;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.gallery p{
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #888888;
+    font-family: Calibri;
+    font-size: 20px;
+}
+
+.pictures{
+    text-align: center;
+    padding-bottom: 80px;
+}
+.pictures img{
+    height: auto;
+    width: 30%;
+    transition: 1s ease;
+}
+
+.pictures img:hover{
+    transform: scale(1.05);
+    border-radius: 50px;
+}
+
+/*RATES*/
+#rates-container{
+    margin-top: 0;
+    padding: 60px;
+    gap: 10px;
+    background-color: #f9f9f9;
+}
+
+.textrate{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    letter-spacing: 2px;
+
+}
+
+.rates{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.daytour, .nighttour, .overnight{
+    text-align: center;
+    font-family: Calibri;
+    font-size: 18px;
+    color: #3d3533;
+    border-right: 3px solid #d2ad36;
+    border-left: 4px solid #d2ad36;
+    border-radius: 10px;
+    background-color: #fefef4;
+    padding: 25px;
+    box-shadow: 0px 0px 10px  #61504c;
+}
+
+.umaga, .gabi, .umaga-gabi{
+    font-family: 'Times New Roman';
+    color: black;
+}
+
+.sunpic, .moonpic, .starpic{
+    width: 40px;
+}
+
+/*AMENITIES*/
+#Amenities-container{
+    margin-top: 0;
+    text-align: center;
+    padding: 60px;
+    gap: 10px;
+    color: #d2ad36;
+    background-color: #231f20;
+}
+
+.amenitiestext{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.amenities > div{
+    flex: 1 1 250px;
+    max-width: 300px;
+}
+
+.amenities img{
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s ease;
+}
+
+.amenities img:hover{
+    transform: scale(1.05);
+}
+
+.cr, .kusina, .internet, .tv, .karaoke, .billiards, .bali-pool, .bata-pool{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.amenities p {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    
+    text-shadow: 2px 4px 10px black;
+}
+
+/*RULES AND REGULATION*/
+#rules-regulation{
+    position: relative;
+    margin-top: 0;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    gap: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px -4px 16px rgba(156, 156, 156, 0.301);
+}
+
+.rulestext{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.rules-container{
+    position: relative;
+}
+
+.rulesyan{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 20px 50px;
+}
+
+.rulesyan::-webkit-scrollbar{
+    display: none;
+}
+
+.rulesyan > div{
+    flex: 0 0 300px;
+    min-width: 280px;
+    max-width: 350px;
+
+    font-family: Calibri;
+    font-size: 20px;
+    color: #3d3533;
+
+    border: 3px solid #d2ad36;
+    border-radius: 12px;
+    background-color: #fefef4;
+    padding: 25px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+
+    text-align: left;
+    scroll-snap-align: start;
+}
+
+.rulesyan > div p{
+    font-size: 20px;
+}
+
+.rulesyan > h3{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    z-index: 10;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: #73610d;
+    color: white;
+}
+
+/*ALL RIGHTS RESERVED*/
+#allrights{
+    margin-top: 0px;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    font-family: Calibri;
+}
+
+.rights-reserved{
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+.palaciotext{
+    font-family: 'Times New Roman';
+    font-size: 25px;
+    color: #73610d;
+    letter-spacing: 2px;
+}
+
+.feliztext{
+    font-family: Calibri;
+    font-size: 35px;
+    color: #888888;
+}
+
+.info-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 80px;
+}
+
+.information{
+    padding-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.socialmedia p{
+    margin-bottom: 0px;
+
+}
+
+.socialmedia img{
+    height: 40px;
+    margin-top: 5px;
+}
+
+.socialmedia, .tawaganmo{
+    font-style: Calibri;
+    font-size: 20px;
+    color: #d2ad36;
+}
+
+.tatawag{
+    font-size: 18px;
+    color: white;
+}
+
+.pupuntakaba p{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.pupuntakaba a{
+    color: white;
+    text-decoration: none;
+    font-style: Calibri;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.puntahanmo img{
+    margin-top: 50px;
+    height: 30px;
+}
+
+.rights b{
+    color: #d2ad36;
+}
+
+.reserved{
+    margin-bottom: 0;
+}

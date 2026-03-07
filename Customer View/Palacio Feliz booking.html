@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Booking</title>
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <link rel="icon" href="../Assets/Palacio Feliz nb.png">
+        <link rel="stylesheet" href="../customer-css/Palacio Feliz booking.css">
+    
+    </head>
+    <body>
+        <nav><!--Navigation Bar-->
+            <div class="logo-container">
+                <img class="logo" src="../Assets/Palacio (2).png" width="75px">
+            </div>
+
+            <div class="Services">
+                <a class="link" href="../Customer View/Palacio Feliz main.html">Home</a>
+                <a class="link" href="../Customer View/Palacio Feliz main.html.#rates-container">Rates</a>
+                <a class="link" href="../Customer View/Palacio Feliz main.html.#Amenities-container">Amenities</a>
+                <a class="link" href="#">Check Availability</a>
+                <a class="btn-link" href="#allrights">Contact us</a>
+            </div>
+        </nav>
+        <div class="content-container">
+            <video class="teaser" src="../Assets/Teaser (1).mp4" autoplay loop muted>
+        </div>
+
+        <!--BOOKING PANEL-->
+       <div id="booking">
+            <h1 class="sch_avb">1. SCHEDULE & AVAILABILITY</h1>
+            <hr>
+            <div class="bookingform">
+                <label class="checkdate" id="checkin"><b>Check-in-Date</b></label>
+                <label class="checkdate" id="checkout"><b>Check-out-Date</b></label>
+                <label class="adults" id="matanda"><b>Adults</b></label>
+                <label class="children" id="bata"><b>Children (0-17)</b></label>
+                <label class="numrooms" id="norooms"><b>Number of Rooms</b></label>
+            </div>
+
+            <div class="bookinginput">
+                <input class="bookingin" for="checkin" type="date">
+                <input class="bookingin" for="checkout" type="date">
+                <input class="bookingin" for="matanda" type="number" placeholder="No. of Adults">
+                <input class="bookingin" for="bata" type="number" placeholder="No. of Children">
+                <input class="bookingin" for="norooms" type="number" placeholder="No. of Rooms">
+
+            </div><br><br>
+
+            <!--Accomodation Type-->
+            <div>
+                <label class="Accom-type" for="accommodation"><b>Accommodation Type</b></label>
+            </div>
+            <div>
+                <select class="Accomchoices">
+                    <option for="accommodation" value="gathering">Gathering</option>
+                    <option for="accommodation" value="reunion">Reunion</option>
+                    <option for="accommodation" value="celebration">Celebration</option>
+                    <option for="accommodation" value="team_building">Team Building</option>
+                    <option for="accommodation" value="others">Others</option>
+                </select>
+            </div>
+            <hr>
+
+            <!--PRICE RANGE & AMENITIES-->
+            <div class="prcamn-panel">
+                <label class="price"><b>Price Range (₱)</b></label>
+                <label class="inclusion"><b>Amenities</b></label>
+            </div>
+
+            <div class="priceinput">
+                <input class="pricenumber" id="finalprice" type="number" placeholder="(₱)">
+                <input class="pricerange" for="finalprice" type="range">
+
+            </div>
+
+            <div class="amenities">
+                <input type="checkbox" checked>
+                <label>Free Wifi</label><br>
+                
+                <input type="checkbox">
+                <label>Pet Friendly</label>
+            </div>
+        </div>
+
+        <!--GUEST DETALS-->
+        <div id="guestdetails">
+            <h1 class="detalye">2. GUEST DETAILS</h1>
+            <hr>
+
+            <div class="guestform">
+                <label class="fname" id="firstn"><b>First Name</b></label>
+                <label class="lname" id="lastn"><b>Last Name</b></label>
+                <label class="email" id="emailadd"><b>Email Address</b></label>
+                <label class="cpnumber" id="cpno"><b>Phone Number</b></label>
+                <label class="city" id="lugar"><b>City</b></label>
+            </div>
+
+            <div class="bookinginput">
+                <input class="bookingin" for="firstn" type="text" placeholder="First Name">
+                <input class="bookingin" for="lastn" type="text" placeholder="Last Name">
+                <input class="bookingin" for="emailadd" type="email" placeholder="Email">
+                <input class="bookingin" for="cpno" type="tel" placeholder="Phone Number">
+                <input class="bookingin" for="lugar" type="text" placeholder="City">
+
+            </div><br><br>
+
+            <!--SPECIAL REQUEST-->
+            <div>
+                <p class="specialrequest" id="srequest"><b>Special Request</b></p>
+                <textarea class="requestsulat" rows="4" cols="40" placeholder="E.g., High floor, feather allergy,..."></textarea>
+            </div>
+           
+            <div class="nosmoking">
+                <input type="checkbox">
+                <label>Non-Smoking Room</label><br>
+            </div>
+        </div>
+
+        <!--PAYMENT & CONFIRMATION-->
+        <div id="paymentconfirm">
+            <h1 class="payconfirmhead">3. PAYMENT & CONFIRMATION</h1>
+            <hr>
+
+            <!--Payment Method-->
+            <div class="payment-method">
+                <div class="method">
+                    <input id="paymaya" type="radio" name="bayadmethod">
+                    <label for="paymaya">PayMaya</label>
+                </div>
+
+                <div class="method">
+                    <input id="gcash" type="radio" name="bayadmethod">
+                    <label for="gcash">Gcash</label>
+                </div>
+
+                <div class="method">
+                    <input id="cash" type="radio" name="bayadmethod">
+                    <label for="cash">Cash</label>
+                </div>
+            </div>
+
+            <!--Cardholder name-->
+            <div>
+                <p class="holdername"><b>Cardholder Name</b></p>
+                <input class="cardholdername" type="text">
+            </div>
+
+            <div>
+                <p class="cardnumber"><b>Card Number</b></p>
+                <input class="cardnum" type="text" placeholder="00000000000">
+            </div>
+
+            <!--Expiration-->
+            <div>
+                <label class="expiry" id="xp"><b>Expiry</b></label><br>
+                <input class="ex-araw" for="xp" type="month">
+            </div>
+
+            <hr>
+
+            <!--Terms and Condition-->
+            <div>
+                <input id="termscondition" type="checkbox">
+                <label class="acceptmo">I accept the <a href="../Customer View/terms-condition.html"><b>Terms & Conditions</b></a></label>
+            </div>
+
+            <!--Cancellation Policy-->
+            <div>
+                <input class="cancelpolicy" type="checkbox">
+                <label>I accept the <b>Cancellation Policy</b></label>
+            </div>
+
+            <div>
+                <button class="ipasa"><b>Confirm Booking</b></button>
+            </div>
+
+        </div>
+
+        <!--ALL RIGHTS RESERVED-->
+        <div id="allrights">
+            <div class="rights-reserved">
+                <label class="palaciotext">PALACIO</label>
+                <label class="feliztext"><b>FELIZ</b></label>
+            </div>
+
+
+            <div class="info-container">
+                <div class="information">
+                    <div class="socialmedia">
+                        <p><b>Follow us</b></p>
+                        <a href="https://www.facebook.com/profile.php?id=61575820877449" target="_blank">
+                            <img src="../Assets/Facebook logo (1).png" alt="Facebook" >
+                        </a>
+                    </div>
+
+                    <div class="tawaganmo">
+                        <p><b>Contact us</b></p>
+                        <p class="tatawag">0931-058-3564</p>
+                    </div>
+                </div>
+
+                <div class="puntahanmo">
+                    <div class="pupuntakaba">
+                        <img src="../Assets/Pin.png" alt="Address"><br>
+                        <a href="https://maps.app.goo.gl/ywDK1zy4QWrmKCrD8" target="_blank">Gaya Gaya Bulacan, Evergreen Ave, Bulacan</a>
+                    </div>
+                </div> 
+            </div>
+
+                <div class="rights">
+                    <p class="reserved">© 2025 <b>Palacio Feliz</b>. All rights reserved.</p>
+                </div>
+        </div>
+
+    </body>
+    <script src="../customer-js/Palacio booking.js"></script>
+</html>

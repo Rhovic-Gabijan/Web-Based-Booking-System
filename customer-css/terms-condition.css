@@ -1,0 +1,183 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../Assets/Resort name.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+/*NAVIGATION*/
+nav{
+    background-color: #231f20;
+    box-shadow: 0px 1px 5px black;
+    padding: 5px;
+    height: 80px;
+    width: 100%;
+}
+
+.logo{
+    height: 70px;
+}
+
+.Services{
+    float: right;
+    position: relative;
+    top: -45px;
+    padding-right: 60px;
+}
+
+.btn-link{
+    padding: 10px 15px;
+    font-family: Verdana;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #d2ad36;
+    transition: 1s;
+}
+
+.btn-link:hover{
+    color: black;
+    background-color: #d2ad36;
+}
+
+/*TERMS AND CONDITION*/
+#condition-container{
+    background-color: #f9f9f9;
+    width: 70%;
+    margin: 60px auto 50px auto;
+    border-radius: 50px;
+    box-shadow: 0px -30px 0px 3px #d2ad36;
+    border-top: 10px solid #73610d;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+#condition-container h3{
+    color: #d2ad36;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+#condition-container p{
+    color: #111010;
+    font-size: 20px;
+    font-family: Calibri;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.terms-condition h3{
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.terms-condition p{
+    text-align: center;
+}
+
+.agreeyansiya p{
+    text-align: justify;
+    text-indent: 40px;
+    font-size: 22px;
+}
+
+.okayed{
+    display: block;
+    width: 90%;
+    margin: 30px auto 50px auto;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: #d2ad36;
+    font-size: 23px;
+    font-family: Calibri;
+    cursor: pointer;
+}
+
+.okayed a{
+    text-decoration: none;
+    color: #111010;
+    display: block;
+    line-height: 50px;
+}
+
+/*FOOTER*/
+#allrights{
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    font-family: Calibri;
+}
+
+.rights-reserved{
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+.palaciotext{
+    font-family: 'Times New Roman';
+    font-size: 25px;
+    color: #73610d;
+    letter-spacing: 2px;
+}
+
+.feliztext{
+    font-size: 35px;
+    color: #888888;
+}
+
+.info-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.information{
+    padding-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+.socialmedia p{
+    margin-bottom: 0;
+}
+
+.socialmedia img{
+    height: 40px;
+    margin-top: 5px;
+}
+
+.socialmedia, .tawaganmo{
+    font-size: 20px;
+    color: #d2ad36;
+}
+
+.tatawag{
+    font-size: 18px;
+    color: white;
+}
+
+.pupuntakaba a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.puntahanmo img{
+    margin-top: 50px;
+    height: 30px;
+}
+
+.rights b{
+    color: #d2ad36;
+}
+
+.reserved{
+    margin-bottom: 0;
+}

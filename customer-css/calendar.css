@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1a1a1a, #333);
+    color: white;
+    text-align: center;
+}
+
+.title {
+    margin-top: 30px;
+    color: gold;
+}
+
+.calendar {
+    width: 400px;
+    margin: 40px auto;
+    background: #111;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 20px gold;
+}
+
+.month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.month button {
+    background: gold;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.days, .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 15px;
+}
+
+.days div {
+    font-weight: bold;
+    color: gold;
+}
+
+.dates div {
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.available {
+    background-color: #2e7d32;
+}
+
+.booked {
+    background-color: #8b0000;
+    cursor: not-allowed;
+}
+
+.today {
+    border: 2px solid gold;
+}
