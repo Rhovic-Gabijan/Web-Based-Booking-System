@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    margin-top: 15px;
+    text-align: center;
+    background-image: url("../Assets/Cover photo.png");
+    background-position: center;
+}
+
+.imahe{
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.textpalacio, .login{
+    margin: 0px auto;
+    padding-top: 10px;
+    font-size: 32px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #dcc98c;
+    width: 20%;
+    height: 50px;
+    background-color: #231f20;
+}
+
+.login-lagayan{
+    margin: 30px auto;
+    width: 385px;
+    box-shadow: 0 0 5px 3px rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+input{
+    display: block;
+    width: 92%;
+    outline: none;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin-top: 10px;
+}
+
+.pindotlogin{
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+    padding: 15px 0;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #d2ad36;
+}
+
+.nakalimutan{
+    margin: 15px 0;
+    display: block;
+    font-family: Arial;
+    text-decoration: none;
+    color: #d2ad36;
+    font-size: 14px;
+}
