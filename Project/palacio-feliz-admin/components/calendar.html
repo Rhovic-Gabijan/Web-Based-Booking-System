@@ -1,0 +1,25 @@
+<!-- CALENDAR VIEW SECTION -->
+<section id="calendar" class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">Calendar View</h2>
+        <div class="breadcrumb">Home / Calendar</div>
+    </div>
+
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <h3 class="chart-title" id="currentMonth">February 2026</h3>
+            <div class="calendar-nav">
+                <button onclick="changeMonth(-1)"><i class="bi bi-chevron-left"></i></button>
+                <button onclick="changeMonth(1)"><i class="bi bi-chevron-right"></i></button>
+            </div>
+        </div>
+        <div class="calendar-grid" id="calendarGrid">
+            <!-- Calendar populated by JavaScript -->
+        </div>
+        <div class="mt-4 d-flex gap-3">
+            <span class="badge" style="background: rgba(212, 175, 55, 0.3); color: var(--gold);">Available</span>
+            <span class="badge" style="background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold); color: var(--gold);">Partially Booked</span>
+            <span class="badge" style="background: rgba(220, 53, 69, 0.1); border: 1px solid var(--danger); color: var(--danger);">Fully Booked</span>
+        </div>
+    </div>
+</section>

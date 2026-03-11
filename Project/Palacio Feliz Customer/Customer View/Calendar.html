@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Booking Calendar — Palacio Feliz Resort</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Assets/Palacio Feliz nb.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../customer-css/calendar.css">
+</head>
+<body>
+
+    <!-- ── NAVIGATION ── -->
+    <nav>
+        <div class="logo-container">
+            <img class="logo" src="../Assets/Palacio (2).png" alt="Palacio Feliz">
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="Services" id="navLinks">
+            <a class="link" href="Palacio Feliz main.html">Home</a>
+            <a class="link" href="Palacio Feliz main.html#rates-container">Packages</a>
+            <a class="link" href="Palacio Feliz main.html#Amenities-container">Amenities</a>
+            <a class="link" href="Palacio Feliz main.html#reviews-section">Reviews</a>
+            <a class="btn-link" href="Palacio Feliz booking.html">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- ── HERO BANNER ── -->
+    <div class="cal-hero">
+        <div class="cal-hero-overlay">
+            <p class="cal-hero-label">Availability</p>
+            <h1 class="cal-hero-title">Booking <span>Calendar</span></h1>
+            <div class="cal-hero-divider"></div>
+            <p class="cal-hero-sub">Check available dates before making your reservation</p>
+        </div>
+    </div>
+
+    <!-- ── MAIN CONTENT ── -->
+    <div class="cal-page">
+
+        <!-- LEGEND -->
+        <div class="legend reveal">
+            <div class="legend-item">
+                <span class="legend-dot available-dot"></span>
+                <span>Available</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot day-dot"></span>
+                <span>Day Swimming</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot night-dot"></span>
+                <span>Night Swimming</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot overnight-dot"></span>
+                <span>Overnight</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot today-dot"></span>
+                <span>Today</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-dot past-dot"></span>
+                <span>Past / Unavailable</span>
+            </div>
+        </div>
+
+        <!-- CALENDAR CARD -->
+        <div class="calendar-card reveal">
+
+            <!-- Month Navigation -->
+            <div class="cal-month-nav">
+                <button class="cal-arrow" id="prev">&#10094;</button>
+                <h2 id="month-year"></h2>
+                <button class="cal-arrow" id="next">&#10095;</button>
+            </div>
+
+            <div class="cal-divider"></div>
+
+            <!-- Day Headers -->
+            <div class="cal-days-header">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+
+            <!-- Date Grid -->
+            <div class="cal-dates" id="dates"></div>
+
+        </div>
+
+        <!-- BOOKING SLOTS PANEL -->
+        <div class="slots-panel reveal" id="slotsPanel">
+            <div class="slots-header">
+                <h3 id="selectedDateLabel">Select a date to view bookings</h3>
+            </div>
+            <div class="slots-body" id="slotsBody">
+                <p class="slots-empty">Click on any date to see its booking status.</p>
+            </div>
+        </div>
+
+    </div><!-- /cal-page -->
+
+    <!-- ── TOOLTIP ── -->
+    <div class="cal-tooltip" id="calTooltip"></div>
+
+    <!-- ── FOOTER ── -->
+    <div id="allrights">
+        <div class="footer-brand">
+            <label class="palaciotext">PALACIO &nbsp;</label><label class="feliztext"><b>FELIZ</b></label>
+            <span class="footer-tagline">PRIVATE RESORT · BULACAN</span>
+        </div>
+        <div class="info-container">
+            <div class="information">
+                <div class="socialmedia">
+                    <p class="footer-col-label">Follow Us</p>
+                    <a href="https://www.facebook.com/profile.php?id=61575820877449" target="_blank">
+                        <img src="../Assets/Facebook logo nb.png" alt="Facebook">
+                    </a>
+                </div>
+                <div class="tawaganmo">
+                    <p class="footer-col-label">Contact Us</p>
+                    <p class="tatawag">0931-058-3564</p>
+                </div>
+            </div>
+            <div class="puntahanmo">
+                <div class="pupuntakaba">
+                    <p class="footer-col-label">Find Us</p>
+                    <img src="../Assets/Pin nb.png" alt="Address">
+                    <a href="https://maps.app.goo.gl/ywDK1zy4QWrmKCrD8" target="_blank">
+                        Gaya Gaya Bulacan, Evergreen Ave, Bulacan
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="rights">
+            <p class="reserved">© 2025 <b>Palacio Feliz</b>. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script src="../customer-js/calendar.js"></script>
+</body>
+</html>

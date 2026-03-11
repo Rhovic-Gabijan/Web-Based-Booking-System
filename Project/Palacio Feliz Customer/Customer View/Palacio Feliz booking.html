@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Your Stay — Palacio Feliz Resort</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Assets/Palacio Feliz nb.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../customer-css/Palacio Feliz booking.css">
+</head>
+<body>
+
+    <!-- ── NAVIGATION ── -->
+    <nav>
+        <div class="logo-container">
+            <img class="logo" src="../Assets/Palacio (2).png" alt="Palacio Feliz">
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="Services" id="navLinks">
+            <a class="link" href="Palacio Feliz main.html">Home</a>
+            <a class="link" href="Palacio Feliz main.html#rates-container">Packages</a>
+            <a class="link" href="Palacio Feliz main.html#Amenities-container">Amenities</a>
+            <a class="link" href="../Customer View/Calendar.html">Check Availability</a>
+            <a class="btn-link" href="#allrights">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <div class="content-container">
+        <video class="teaser" src="../Assets/Teaser (1).mp4" autoplay loop muted playsinline></video>
+        <div class="hero-overlay">
+            <div class="scroll-hint">
+                <span>Scroll</span>
+                <div class="scroll-hint-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── BOOKING WRAPPER ── -->
+    <div class="booking-wrapper">
+
+        <!-- ─── CARD 1: SCHEDULE & AVAILABILITY ─── -->
+        <div class="booking-card card-delay-1">
+            <div class="card-header">
+                <div class="card-number">1</div>
+                <h2>Schedule &amp; Availability</h2>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-body">
+
+                <!-- Dates & Guests -->
+                <div class="form-grid four-col">
+                    <div class="form-group">
+                        <label for="checkIn">Check-in Date</label>
+                        <input id="checkIn" type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkOut">Check-out Date</label>
+                        <input id="checkOut" type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adults">Adults</label>
+                        <input id="adults" type="number" min="1" max="50" placeholder="No. of Adults" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="children">Youth (1–17 yrs old)</label>
+                        <input id="children" type="number" min="0" max="50" placeholder="No. of Children">
+                    </div>
+                </div>
+
+                <!-- Package & Time -->
+                <div class="form-grid" style="margin-top:20px;">
+                    <div class="form-group">
+                        <label for="accomSelect">Accommodation Type</label>
+                        <select id="accomSelect" required>
+                            <option disabled selected value="">— Select Package —</option>
+                            <option value="wedding">Wedding Package</option>
+                            <option value="corporate">Corporate Retreat</option>
+                            <option value="birthday">Birthday Celebration</option>
+                            <option value="barkada">Barkada Gala</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeSelect">Time Check-in &amp; Out</label>
+                        <select id="timeSelect" required>
+                            <option disabled selected value="">— Select Schedule —</option>
+                            <option value="dayswimming">Day Swimming &nbsp;· 6:00 AM – 5:00 PM</option>
+                            <option value="nightswimming">Night Swimming &nbsp;· 6:00 PM – 5:00 AM</option>
+                            <option value="overnight">Overnight &nbsp;· 6:00 AM – 5:00 AM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Price -->
+                <div style="margin-top:24px;">
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label>Price (₱)</label>
+                    </div>
+                    <div class="price-display">
+                        <div class="price-amount" id="priceOutput">₱ 0 <span>estimated</span></div>
+                        <input
+                            class="price-range-input"
+                            id="priceRange"
+                            type="range"
+                            min="0"
+                            max="35000"
+                            step="500"
+                            value="0"
+                            disabled>
+                    </div>
+                    <p style="font-size:11px;color:var(--muted);margin-top:8px;letter-spacing:1px;">
+                        * Price auto-fills based on your selected schedule and date. Weekends &amp; holidays may vary.
+                    </p>
+                </div>
+
+            </div>
+        </div><!-- /card 1 -->
+
+        <!-- ─── CARD 2: GUEST DETAILS ─── -->
+        <div class="booking-card card-delay-2">
+            <div class="card-header">
+                <div class="card-number">2</div>
+                <h2>Guest Details</h2>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-body">
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" type="text" placeholder="Juan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" type="text" placeholder="Dela Cruz" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddr">Email Address</label>
+                        <input id="emailAddr" type="email" placeholder="juan@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNum">Phone Number</label>
+                        <input id="phoneNum" type="tel" placeholder="09XXXXXXXXX" required>
+                    </div>
+                    <div class="form-group form-full">
+                        <label for="validID">Valid ID <span style="font-weight:400;text-transform:none;letter-spacing:0;">(Government-issued)</span></label>
+                        <input id="validID" type="file" accept="image/*,.pdf" required>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label for="specialRequest">Special Request</label>
+                    <textarea id="specialRequest" placeholder="E.g., Birthday setup, dietary restrictions, room preferences…"></textarea>
+                </div>
+
+            </div>
+        </div><!-- /card 2 -->
+
+        <!-- ─── CARD 3: PAYMENT & CONFIRMATION ─── -->
+        <div class="booking-card card-delay-3">
+            <div class="card-header">
+                <div class="card-number">3</div>
+                <h2>Payment &amp; Confirmation</h2>
+            </div>
+            <div class="card-divider"></div>
+            <div class="card-body">
+
+                <!-- Payment method selector -->
+                <div class="form-group" style="margin-bottom:8px;">
+                    <label>Payment Method</label>
+                </div>
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <input type="radio" id="paymaya" name="bayadmethod" value="paymaya">
+                        <label for="paymaya">
+                            <span class="payment-icon">💳</span> PayMaya
+                        </label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="gcash" name="bayadmethod" value="gcash">
+                        <label for="gcash">
+                            <span class="payment-icon">📱</span> GCash
+                        </label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="cash" name="bayadmethod" value="cash">
+                        <label for="cash">
+                            <span class="payment-icon">💵</span> Cash
+                        </label>
+                    </div>
+                </div>
+
+                <!-- PayMaya fields -->
+                <div class="conditional-fields" id="cardFields">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="cardHolder">Cardholder Name</label>
+                            <input id="cardHolder" type="text" placeholder="Juan Dela Cruz">
+                        </div>
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <input id="cardNumber" type="text" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txnScreenshot">Transaction Screenshot</label>
+                        <input id="txnScreenshot" type="file" accept="image/*">
+                    </div>
+                </div>
+
+                <!-- GCash fields -->
+                <div class="conditional-fields" id="gcashFields">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="gcashName">Account Name</label>
+                            <input id="gcashName" type="text" placeholder="Registered GCash Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="gcashNum">GCash Number</label>
+                            <input id="gcashNum" type="tel" placeholder="09XXXXXXXXX">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gcashScreenshot">Transaction Screenshot</label>
+                        <input id="gcashScreenshot" type="file" accept="image/*">
+                    </div>
+                </div>
+
+                <!-- Cash fields -->
+                <div class="conditional-fields" id="cashFields">
+                    <p style="font-size:13px;color:var(--muted);background:#fafafa;border:1.5px solid var(--border);padding:14px 18px;border-radius:8px;line-height:1.7;">
+                        💡 &nbsp;Cash payment is collected upon arrival at the resort. Please bring the exact amount.
+                        A <strong>50% down payment</strong> may be required for certain packages to confirm your reservation.
+                    </p>
+                </div>
+
+                <div class="card-divider" style="margin:24px 0;"></div>
+
+                <!-- Policies -->
+                <div class="form-group" style="margin-bottom:12px;">
+                    <label>Agreements</label>
+                </div>
+
+                <div class="policy-box" for-policy="terms">
+                    <input id="termscondition" type="checkbox">
+                    <div class="policy-text">
+                        I have read and agree to the
+                        <a href="terms-condition.html">Terms &amp; Conditions</a>
+                        of Palacio Feliz Private Resort.
+                    </div>
+                </div>
+
+                <div class="policy-box" for-policy="cancel">
+                    <input id="cancelpolicy" type="checkbox">
+                    <div class="policy-text">
+                        I understand and accept the <strong>Cancellation Policy</strong>.
+                        Cancellations made less than 48 hours before the booking date are non-refundable.
+                    </div>
+                </div>
+
+                <button class="btn-confirm" id="confirmBtn">
+                    ✦ &nbsp;Confirm Booking
+                </button>
+
+            </div>
+        </div><!-- /card 3 -->
+
+    </div><!-- /booking-wrapper -->
+
+    <!-- ── SUCCESS TOAST ── -->
+    <div class="success-toast" id="successToast">
+        ✅ &nbsp;Booking submitted! We'll contact you shortly to confirm.
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <div id="allrights">
+        <div class="footer-brand">
+            <label class="palaciotext">PALACIO &nbsp;</label><label class="feliztext"><b>FELIZ</b></label>
+            <span class="footer-tagline">PRIVATE RESORT · BULACAN</span>
+        </div>
+
+        <div class="info-container">
+            <div class="information">
+                <div class="socialmedia">
+                    <p class="footer-col-label">Follow Us</p>
+                    <a href="https://www.facebook.com/profile.php?id=61575820877449" target="_blank">
+                        <img src="../Assets/Facebook logo (1).png" alt="Facebook">
+                    </a>
+                </div>
+                <div class="tawaganmo">
+                    <p class="footer-col-label">Contact Us</p>
+                    <p class="tatawag">0931-058-3564</p>
+                </div>
+            </div>
+            <div class="puntahanmo">
+                <div class="pupuntakaba">
+                    <p class="footer-col-label">Find Us</p>
+                    <img src="../Assets/Pin nb.png" alt="Address">
+                    <a href="https://maps.app.goo.gl/ywDK1zy4QWrmKCrD8" target="_blank">
+                        Gaya Gaya Bulacan, Evergreen Ave, Bulacan
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="rights">
+            <p class="reserved">© 2025 <b>Palacio Feliz</b>. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script src="../customer-js/Palacio booking.js"></script>
+</body>
+</html>

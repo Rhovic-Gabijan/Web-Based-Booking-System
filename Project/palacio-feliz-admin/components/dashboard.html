@@ -1,0 +1,398 @@
+<!-- DASHBOARD SECTION -->
+<section id="dashboard" class="content-section active">
+    <div class="section-header">
+        <h2 class="section-title">Dashboard Overview</h2>
+        <div class="breadcrumb">Home / Dashboard</div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-header">
+                <div>
+                    <div class="stat-label">Total Bookings</div>
+                    <div class="stat-value" id="totalBookings">156</div>
+                </div>
+                <div class="stat-icon">
+                    <i class="bi bi-calendar-check"></i>
+                </div>
+            </div>
+            <div class="stat-change">↑ 12% from last month</div>
+        </div>
+
+        <div class="stat-card pending">
+            <div class="stat-header">
+                <div>
+                    <div class="stat-label">Pending Approvals</div>
+                    <div class="stat-value" id="pendingApprovals">8</div>
+                </div>
+                <div class="stat-icon">
+                    <i class="bi bi-hourglass-split"></i>
+                </div>
+            </div>
+            <div class="stat-change">Requires attention</div>
+        </div>
+
+        <div class="stat-card approved">
+            <div class="stat-header">
+                <div>
+                    <div class="stat-label">Approved Bookings</div>
+                    <div class="stat-value" id="approvedBookings">142</div>
+                </div>
+                <div class="stat-icon">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+            </div>
+            <div class="stat-change">↑ 8% from last month</div>
+        </div>
+
+        <div class="stat-card revenue">
+            <div class="stat-header">
+                <div>
+                    <div class="stat-label">Total Revenue</div>
+                    <div class="stat-value">₱2.4M</div>
+                </div>
+                <div class="stat-icon">
+                    <i class="bi bi-cash-stack"></i>
+                </div>
+            </div>
+            <div class="stat-change">↑ 15% from last month</div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="chart-container">
+        <div class="chart-header">
+            <h3 class="chart-title">Monthly Bookings Overview</h3>
+            <select class="form-select" style="width: auto;">
+                <option>Last 6 Months</option>
+                <option>Last Year</option>
+                <option>This Year</option>
+            </select>
+        </div>
+        <canvas id="bookingsChart" height="100"></canvas>
+    </div>
+
+    <!-- Recent Bookings Table -->
+    <div class="table-container">
+        <div class="table-header">
+            <h3 class="table-title">Recent Bookings</h3>
+            <button class="btn btn-outline-secondary btn-sm"
+                    onclick="showSection('all-reservations', document.querySelectorAll('.nav-link')[2])">
+                View All
+            </button>
+        </div>
+        <div class="table-responsive">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Guest Name</th>
+                        <th>Event Type</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="recentBookingsTable">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- BOOKING APPROVAL SECTION -->
+<section id="booking-approval" class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">Booking Approval</h2>
+        <div class="breadcrumb">Home / Booking Approval</div>
+    </div>
+
+    <div class="table-container">
+        <div class="table-header">
+            <h3 class="table-title">Pending Booking Requests</h3>
+            <div class="table-filters">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search requests..." id="approvalSearch" onkeyup="filterApprovals()">
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Guest Name</th>
+                        <th>Contact Number</th>
+                        <th>Event Type</th>
+                        <th>Date</th>
+                        <th>Guests</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="approvalTable">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ALL RESERVATIONS SECTION -->
+<section id="all-reservations" class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">All Reservations</h2>
+        <div class="breadcrumb">Home / All Reservations</div>
+    </div>
+
+    <div class="table-container">
+        <div class="table-header">
+            <h3 class="table-title">Complete Booking List</h3>
+            <div class="table-filters">
+                <select class="form-select form-select-sm" id="statusFilter" onchange="filterReservations()">
+                    <option value="">All Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+                <input type="date" class="form-control form-control-sm" id="dateFilter" onchange="filterReservations()">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search bookings..." id="reservationSearch" onkeyup="filterReservations()">
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Guest Name</th>
+                        <th>Event Type</th>
+                        <th>Check-in</th>
+                        <th>Check-out</th>
+                        <th>Guests</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="reservationsTable">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- GUESTS SECTION -->
+<section id="guests" class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">Guest Management</h2>
+        <div class="breadcrumb">Home / Guests</div>
+    </div>
+
+    <div class="table-container">
+        <div class="table-header">
+            <h3 class="table-title">Registered Guests</h3>
+            <div class="search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Search guests..." id="guestSearch" onkeyup="filterGuests()">
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Guest Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Total Bookings</th>
+                        <th>Last Visit</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="guestsTable">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- GUEST REVIEWS SECTION -->
+<section id="reviews" class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">Guest Reviews</h2>
+        <div class="breadcrumb">Home / Reviews</div>
+    </div>
+
+    <div class="reviews-grid" id="reviewsContainer">
+        <!-- Review cards populated by JavaScript -->
+    </div>
+</section>
+
+<!-- PAYMENTS SECTION -->
+<section id="payments" class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">Payment Tracking</h2>
+        <div class="breadcrumb">Home / Payments</div>
+    </div>
+
+    <div class="table-container">
+        <div class="table-header">
+            <h3 class="table-title">Payment Records</h3>
+            <div class="table-filters">
+                <select class="form-select form-select-sm" id="paymentFilter" onchange="filterPayments()">
+                    <option value="">All Status</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Partial">Partial</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Guest Name</th>
+                        <th>Total Amount</th>
+                        <th>Amount Paid</th>
+                        <th>Balance</th>
+                        <th>Payment Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="paymentsTable">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- EVENTS & PACKAGES SECTION -->
+<section id="events" class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">Events & Packages</h2>
+        <div class="breadcrumb">Home / Events & Packages</div>
+    </div>
+
+    <div class="mb-4">
+        <button class="btn-gold" data-bs-toggle="modal" data-bs-target="#addPackageModal">
+            <i class="bi bi-plus-lg"></i> Add New Package
+        </button>
+    </div>
+
+    <div class="row" id="packagesContainer">
+        <!-- Package cards populated by JavaScript -->
+    </div>
+</section>
+
+<!-- REPORTS SECTION -->
+<section id="reports" class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">Reports & Analytics</h2>
+        <div class="breadcrumb">Home / Reports</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="chart-container">
+                <h3 class="chart-title">Monthly Revenue</h3>
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="chart-container">
+                <h3 class="chart-title">Booking Statistics</h3>
+                <canvas id="statisticsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <div class="table-header">
+            <h3 class="table-title">Monthly Summary</h3>
+        </div>
+        <div class="table-responsive">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Total Bookings</th>
+                        <th>Revenue</th>
+                        <th>Occupancy Rate</th>
+                        <th>Avg. Guest Count</th>
+                    </tr>
+                </thead>
+                <tbody id="monthlySummaryTable">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- SETTINGS SECTION -->
+<section id="settings" class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">Settings</h2>
+        <div class="breadcrumb">Home / Settings</div>
+    </div>
+
+    <div class="form-container">
+        <h4 class="mb-4" style="font-family: var(--heading-font); color: var(--dark);">Resort Information</h4>
+        <form id="resortSettingsForm" onsubmit="saveSettings(event)">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Resort Name</label>
+                        <input type="text" class="form-control" value="Palacio Feliz" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Contact Email</label>
+                        <input type="email" class="form-control" value="reservations@palaciofeliz.com" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Contact Phone</label>
+                <input type="tel" class="form-control" value="+63 2 8123 4567" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Address</label>
+                <textarea class="form-control" rows="3">123 Garden Estate Road, Metro Manila, Philippines</textarea>
+            </div>
+
+            <hr class="my-4">
+
+            <h4 class="mb-4" style="font-family: var(--heading-font); color: var(--dark);">Change Password</h4>
+            <div class="form-group">
+                <label class="form-label">Current Password</label>
+                <input type="password" class="form-control" required>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">New Password</label>
+                        <input type="password" class="form-control" id="newPassword" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Confirm New Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-gold mt-3">Save Changes</button>
+        </form>
+    </div>
+</section>

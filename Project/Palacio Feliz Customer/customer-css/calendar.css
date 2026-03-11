@@ -1,0 +1,653 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --gold:      #d2ad36;
+    --gold-dark: #73610d;
+    --gold-light:#e8c94a;
+    --dark:      #231f20;
+    --darker:    #1a1a1a;
+    --light:     #f9f9f9;
+    --cream:     #fefef4;
+    --text:      #3d3533;
+    --muted:     #888888;
+    --border:    #e0e0e0;
+
+    /* Booking type colours */
+    --day-color:       #c97c2b;   /* warm amber  – Day Swimming   */
+    --night-color:     #2b5fa8;   /* deep blue   – Night Swimming */
+    --overnight-color: #6b35a8;   /* violet      – Overnight      */
+    --available-color: #2e7d32;   /* green       – Available      */
+    --past-color:      #555;      /* grey        – Past dates     */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    background-color: var(--light);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.75s cubic-bezier(.16,1,.3,1),
+                transform 0.75s cubic-bezier(.16,1,.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ══════════════════════════════════
+   NAV
+══════════════════════════════════ */
+nav {
+    background-color: #231f20;
+    box-shadow: 0px 1px 5px black;
+    padding: 0 40px;
+    position: fixed;
+    top: 0; left: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-container { display: flex; align-items: center; }
+.logo { height: 55px; width: auto; }
+
+.Services {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.link {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 90%;
+    margin: 0 20px;
+    transition: color 1s;
+}
+.link:hover { color: var(--gold); }
+
+.btn-link {
+    margin-right: 15px;
+    padding: 10px 15px;
+    font-family: Verdana, sans-serif;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid var(--gold);
+    transition: 1s;
+}
+.btn-link:hover { color: black; background-color: var(--gold); }
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+    z-index: 1100;
+}
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.35s cubic-bezier(.16,1,.3,1);
+    transform-origin: center;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ══════════════════════════════════
+   HERO BANNER
+══════════════════════════════════ */
+.cal-hero {
+    margin-top: 80px;          /* offset for fixed nav */
+    height: 280px;
+    background: linear-gradient(135deg, var(--dark) 0%, #3d3533 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle decorative rings */
+.cal-hero::before,
+.cal-hero::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(210,173,54,0.15);
+}
+.cal-hero::before { width: 500px; height: 500px; top: -200px; right: -100px; }
+.cal-hero::after  { width: 300px; height: 300px; bottom: -150px; left: -80px; }
+
+.cal-hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cal-hero-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+}
+.cal-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 300;
+    color: white;
+    letter-spacing: 4px;
+    text-align: center;
+}
+.cal-hero-title span { color: var(--gold); font-style: italic; }
+
+.cal-hero-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+}
+.cal-hero-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* ══════════════════════════════════
+   PAGE LAYOUT
+══════════════════════════════════ */
+.cal-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ══════════════════════════════════
+   LEGEND
+══════════════════════════════════ */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 18px 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    border-top: 3px solid var(--gold);
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+}
+.legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.available-dot  { background: var(--available-color); }
+.day-dot        { background: var(--day-color); }
+.night-dot      { background: var(--night-color); }
+.overnight-dot  { background: var(--overnight-color); }
+.today-dot      { background: transparent; border: 2px solid var(--gold); }
+.past-dot       { background: var(--past-color); }
+
+/* ══════════════════════════════════
+   CALENDAR CARD
+══════════════════════════════════ */
+.calendar-card {
+    background: white;
+    border-radius: 12px;
+    border-top: 4px solid var(--gold);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+    overflow: hidden;
+    transition-delay: 0.1s;
+}
+
+/* Month nav */
+.cal-month-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px 20px;
+}
+.cal-month-nav h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: 2px;
+}
+.cal-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    background: white;
+    color: var(--gold);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s;
+}
+.cal-arrow:hover { background: var(--gold); color: white; }
+
+.cal-divider { height: 1px; background: var(--border); margin: 0 32px; }
+
+/* Day headers */
+.cal-days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 16px 20px 8px;
+    gap: 4px;
+}
+.cal-days-header div {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold);
+    text-transform: uppercase;
+}
+
+/* Date grid */
+.cal-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 4px 20px 24px;
+    gap: 6px;
+}
+
+.cal-date {
+    position: relative;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.18s, box-shadow 0.18s, opacity 0.18s;
+    user-select: none;
+    overflow: hidden;
+}
+
+/* Empty placeholder cells */
+.cal-date.empty { background: transparent; cursor: default; }
+
+/* States */
+.cal-date.available {
+    background: rgba(46,125,50,0.1);
+    color: #2e7d32;
+    border: 1.5px solid rgba(46,125,50,0.2);
+}
+.cal-date.available:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(46,125,50,0.25);
+    z-index: 2;
+}
+
+.cal-date.day-booked {
+    background: rgba(201,124,43,0.15);
+    color: #7a4810;
+    border: 1.5px solid rgba(201,124,43,0.35);
+}
+.cal-date.day-booked:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(201,124,43,0.3);
+    z-index: 2;
+}
+
+.cal-date.night-booked {
+    background: rgba(43,95,168,0.15);
+    color: #1a3a6b;
+    border: 1.5px solid rgba(43,95,168,0.35);
+}
+.cal-date.night-booked:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(43,95,168,0.3);
+    z-index: 2;
+}
+
+.cal-date.overnight-booked {
+    background: rgba(107,53,168,0.15);
+    color: #3d1a6b;
+    border: 1.5px solid rgba(107,53,168,0.35);
+}
+.cal-date.overnight-booked:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(107,53,168,0.3);
+    z-index: 2;
+}
+
+/* Multiple bookings indicator */
+.cal-date.multi-booked {
+    background: linear-gradient(135deg,
+        rgba(201,124,43,0.15) 0%,
+        rgba(43,95,168,0.15) 50%,
+        rgba(107,53,168,0.15) 100%);
+    border: 1.5px solid var(--gold);
+    color: var(--text);
+}
+.cal-date.multi-booked:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 14px rgba(210,173,54,0.3);
+    z-index: 2;
+}
+
+/* Slot pip dots (shown inside date cell when multi-booked) */
+.slot-pips {
+    display: flex;
+    gap: 3px;
+    position: absolute;
+    bottom: 4px;
+}
+.slot-pip {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+.pip-day       { background: var(--day-color); }
+.pip-night     { background: var(--night-color); }
+.pip-overnight { background: var(--overnight-color); }
+
+/* Past / unavailable */
+.cal-date.past {
+    background: rgba(85,85,85,0.07);
+    color: #bbb;
+    cursor: not-allowed;
+}
+.cal-date.past:hover { transform: none; box-shadow: none; }
+
+/* Today ring */
+.cal-date.today::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    pointer-events: none;
+}
+
+/* Selected */
+.cal-date.selected {
+    outline: 3px solid var(--gold);
+    outline-offset: 1px;
+    z-index: 3;
+}
+
+/* ══════════════════════════════════
+   TOOLTIP
+══════════════════════════════════ */
+.cal-tooltip {
+    position: fixed;
+    background: var(--dark);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border-left: 3px solid var(--gold);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 9999;
+    white-space: nowrap;
+    max-width: 220px;
+    white-space: normal;
+    line-height: 1.5;
+}
+.cal-tooltip.visible { opacity: 1; }
+
+/* ══════════════════════════════════
+   SLOTS PANEL
+══════════════════════════════════ */
+.slots-panel {
+    background: white;
+    border-radius: 12px;
+    border-top: 4px solid var(--gold);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition-delay: 0.2s;
+}
+.slots-header {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+}
+.slots-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: 1px;
+}
+.slots-body { padding: 20px 28px 28px; }
+
+.slots-empty {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Slot time rows */
+.slot-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1.5px solid var(--border);
+    transition: border-color 0.2s;
+}
+.slot-row:last-child { margin-bottom: 0; }
+
+.slot-badge {
+    width: 10px;
+    height: 36px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+.badge-day       { background: var(--day-color); }
+.badge-night     { background: var(--night-color); }
+.badge-overnight { background: var(--overnight-color); }
+.badge-available { background: var(--available-color); }
+
+.slot-info { flex: 1; }
+.slot-type {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+.slot-time {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+.slot-status {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+.status-booked {
+    background: rgba(139,0,0,0.08);
+    color: #8b0000;
+}
+.status-available {
+    background: rgba(46,125,50,0.10);
+    color: #2e7d32;
+}
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+#allrights {
+    background-color: var(--darker);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border-top: 1px solid rgba(210,173,54,0.2);
+}
+.footer-brand {
+    text-align: center;
+    padding: 60px 40px 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.palaciotext {
+    font-family: 'Times New Roman', serif;
+    font-size: 25px;
+    color: var(--gold-dark);
+    letter-spacing: 2px;
+}
+.feliztext {
+    font-family: Calibri, sans-serif;
+    font-size: 35px;
+    color: var(--muted);
+}
+.footer-tagline {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.28);
+    margin-top: 10px;
+}
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 80px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.information { display: flex; gap: 50px; flex-wrap: wrap; }
+.footer-col-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+.socialmedia img { height: 36px; margin-top: 4px; opacity: 0.8; transition: opacity 0.3s; }
+.socialmedia img:hover { opacity: 1; }
+.tatawag { font-size: 16px; color: white; margin-top: 4px; }
+.pupuntakaba img { height: 22px; margin-right: 8px; vertical-align: middle; opacity: 0.6; }
+.pupuntakaba a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.7;
+    transition: color 0.3s;
+}
+.pupuntakaba a:hover { color: var(--gold); }
+.rights { border-top: 1px solid rgba(255,255,255,0.05); padding: 20px 80px; }
+.reserved { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
+.reserved b { color: var(--gold); font-weight: 500; }
+
+/* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+@media (max-width: 1100px) {
+    .info-container { padding: 40px 50px; }
+    .rights { padding: 20px 50px; }
+}
+
+@media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .hamburger { display: flex; }
+    .Services {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(26,26,26,0.97);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        z-index: 1050;
+    }
+    .Services.nav-open { display: flex; }
+    .link { font-size: 18px; padding: 10px 24px; margin: 0; }
+    .btn-link { font-size: 15px; padding: 12px 32px; margin: 0; }
+
+    .cal-hero { height: 220px; }
+    .cal-page { padding: 36px 16px 60px; }
+    .legend { gap: 14px; padding: 14px 18px; }
+
+    .cal-month-nav { padding: 18px 20px 14px; }
+    .cal-month-nav h2 { font-size: 22px; }
+    .cal-divider { margin: 0 20px; }
+    .cal-days-header { padding: 12px 12px 6px; }
+    .cal-dates { padding: 4px 12px 18px; gap: 4px; }
+    .cal-date { font-size: 12px; border-radius: 6px; }
+
+    .slots-header { padding: 16px 20px; }
+    .slots-body { padding: 16px 20px 20px; }
+
+    .info-container { flex-direction: column; align-items: flex-start; padding: 32px 32px; gap: 28px; }
+    .rights { padding: 16px 32px; }
+}
+
+@media (max-width: 600px) {
+    nav { height: 64px; padding: 0 18px; }
+    .logo { height: 44px; }
+
+    .cal-hero { height: 180px; }
+    .cal-hero-title { letter-spacing: 2px; }
+
+    .legend { gap: 10px 16px; }
+    .legend-item { font-size: 12px; }
+
+    .cal-month-nav h2 { font-size: 18px; letter-spacing: 1px; }
+    .cal-arrow { width: 34px; height: 34px; font-size: 13px; }
+    .cal-days-header div { font-size: 10px; }
+    .cal-date { font-size: 11px; }
+
+    .slot-row { padding: 10px 12px; gap: 10px; }
+    .slot-type { font-size: 12px; }
+
+    .info-container { padding: 24px 20px; }
+    .footer-brand { padding: 36px 20px 24px; }
+    .rights { padding: 14px 20px; }
+}
+
+@media (max-width: 400px) {
+    nav { padding: 0 12px; }
+    .logo { height: 38px; }
+    .cal-date { font-size: 10px; border-radius: 4px; }
+    .slot-pips { gap: 2px; }
+    .slot-pip { width: 4px; height: 4px; }
+}

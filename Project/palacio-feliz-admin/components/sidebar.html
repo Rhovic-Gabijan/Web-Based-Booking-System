@@ -1,0 +1,79 @@
+<!-- Sidebar Navigation -->
+<nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="brand-logo">
+            <span class="logo-block">PALACIO</span>
+            <span class="logo-script">Feliz</span>
+            <span class="admin-badge">Admin Panel</span>
+        </div>
+    </div>
+
+    <ul class="nav-menu">
+        <li class="nav-item">
+            <a href="#" class="nav-link active" onclick="showSection('dashboard', this)">
+                <i class="bi bi-speedometer2"></i>
+                <span class="nav-text">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showSection('booking-approval', this)">
+                <i class="bi bi-check2-square"></i>
+                <span class="nav-text">Booking Approval</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showSection('all-reservations', this)">
+                <i class="bi bi-calendar-check"></i>
+                <span class="nav-text">All Reservations</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showSection('calendar', this)">
+                <i class="bi bi-calendar3"></i>
+                <span class="nav-text">Calendar View</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showSection('guests', this)">
+                <i class="bi bi-people"></i>
+                <span class="nav-text">Guests</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showSection('reviews', this)">
+                <i class="bi bi-star"></i>
+                <span class="nav-text">Guest Reviews</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showSection('payments', this)">
+                <i class="bi bi-credit-card"></i>
+                <span class="nav-text">Payments</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showSection('events', this)">
+                <i class="bi bi-gift"></i>
+                <span class="nav-text">Events & Packages</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showSection('reports', this)">
+                <i class="bi bi-graph-up"></i>
+                <span class="nav-text">Reports</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showSection('settings', this)">
+                <i class="bi bi-gear"></i>
+                <span class="nav-text">Settings</span>
+            </a>
+        </li>
+        <li class="nav-item logout-item">
+            <a href="#" class="nav-link" onclick="logout()">
+                <i class="bi bi-box-arrow-right"></i>
+                <span class="nav-text">Logout</span>
+            </a>
+        </li>
+    </ul>
+</nav>
